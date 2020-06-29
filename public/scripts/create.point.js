@@ -17,8 +17,8 @@ function populateUFs() {
 populateUFs();
 
 function getCities(event) {
-  const citySelect = document.querySelector("select[name=city]")
-  const stateInput = document.querySelector("input[name=state]")
+  const citySelect = document.querySelector("[name=city]")
+  const stateInput = document.querySelector("[name=state]")
 
   const ufValue = event.target.value;
 
@@ -62,6 +62,7 @@ function handleSelectedItem(event) {
   itemLi.classList.toggle("selected");
   
   const itemId = itemLi.dataset.id;
+  console.log('Item do id:', itemId)
   
 //verificar se existem itens selecionado, se sim
 //pegar os itens selecionados
@@ -79,14 +80,14 @@ if( alreadySelect >= 0 ) {
     return itemIsDifferent
   })
   
-  selectedItems  = filteredItems
+  selectedItems = filteredItems
 } else{
   //se não estiver selecionado
   //adicionar à seleção
   selectedItems.push(itemId)
 }
 
-console.log(selectedItems)
+console.log('selectedItem', selectedItems)
 
 //Atualizar o campo escondido com os itens selecionados
 collectedItems.value = selectedItems
